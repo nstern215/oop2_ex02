@@ -1,6 +1,6 @@
 #pragma once
 
-class FacultyValue
+class BaseValidator
 {
 public:
 	
