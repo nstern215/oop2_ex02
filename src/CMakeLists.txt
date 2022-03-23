@@ -3,4 +3,6 @@
                                  "Field.cpp"
                                  "FacultyValue.cpp"
                                  "RangeValidator.cpp"
-                                 "MinValidator.cpp")
+                                 "MinValidator.cpp"
+                                 "BaseFormValidator.cpp"
+                                 "BaseField.cpp")

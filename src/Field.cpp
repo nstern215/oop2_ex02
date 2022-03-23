@@ -7,12 +7,6 @@ Field<T>::Field(std::string title):
 {}
 
 template <class T>
-void Field<T>::addValidator(BaseValidator* validator)
-{
-	m_validators.push_back(validator);
-}
-
-template <class T>
 std::string Field<T>::getFieldTitle() const
 {
 	return m_fieldTitle;

@@ -10,11 +10,9 @@ class Field : public BaseField
 {
 public:
 	Field(std::string title);
-	void addValidator(BaseValidator* validator);
-	std::string getFieldTitle() const;
+	std::string getFieldTitle() const override;
 private:
 	std::string m_fieldTitle;
-	std::vector<BaseValidator*> m_validators;
 };
 
 template<typename T>
