@@ -18,14 +18,18 @@ void Form::addValidator(BaseFormValidator* validator)
 
 void Form::fillForm()
 {
-	
+	for(const auto& field : m_fields)
+	{
+		std::cout << *field;
+		field->fillField();
+	}
 }
 
 
 std::ostream& Form::print(std::ostream& os) const
 {
 	for (const auto& field : m_fields)
-		os << field;
+		os << field->getFieldTitle() << "\n";
 
 	return os;
 }

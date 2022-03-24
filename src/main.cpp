@@ -87,13 +87,13 @@ int main()
     // std::unique_ptr<Field<std::string>> nameField(new Field<std::string>("What is your name?"));
     auto idField          = std::make_unique<Field<uint32_t>>    ("What is your ID?");
     auto yearOfBirthField = std::make_unique<Field<int>>         ("What is your year of birth?");
-    auto facultyField     = std::make_unique<Field<FacultyValue>>("What faculty are you registering to?\n"
-                                                                  "(1-Computer Science, 2-Medicine, 3-Literature)");
+    /*auto facultyField     = std::make_unique<Field<FacultyValue>>("What faculty are you registering to?\n"
+                                                                  "(1-Computer Science, 2-Medicine, 3-Literature)");*/
     auto yearField        = std::make_unique<Field<int>>         ("Which year is it in your studies? (1-"
                                                                   + std::to_string(MAX_POSSIBLE_YEAR) + ")");
     auto courseField      = std::make_unique<Field<short>>       ("How many courses you are taking this year?");
 
-    // Creating the field validators
+    //// Creating the field validators
     auto nameValidator    = std::make_unique<NoDigitValidator>            ();
     auto idValidator      = std::make_unique<IDValidator>                 ();
     auto ageValidator     = std::make_unique<RangeValidator<int>>         (currentYear()-MAX_AGE, currentYear()-MIN_AGE);
@@ -120,7 +120,7 @@ int main()
     myForm.addField(nameField.get());
     myForm.addField(idField.get());
     myForm.addField(yearOfBirthField.get());
-    myForm.addField(facultyField.get());
+    //myForm.addField(facultyField.get());
     myForm.addField(yearField.get());
     myForm.addField(courseField.get());
 

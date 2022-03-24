@@ -5,4 +5,9 @@
                                  "RangeValidator.cpp"
                                  "MinValidator.cpp"
                                  "BaseFormValidator.cpp"
-                                 "BaseField.cpp")
+                                 "BaseField.cpp"
+                                 "BaseValidator.cpp"
+                                 "Course2YearValidator.cpp"
+                                 "Faculty2YearValidator.cpp"
+                                 "IdValidator.cpp"
+                                 "NoDigitValidator.cpp")

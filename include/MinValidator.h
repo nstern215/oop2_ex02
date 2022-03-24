@@ -5,7 +5,7 @@ template<class T>
 class MinValidator : public BaseValidator
 {
 public:
-	MinValidator(T min);
+	MinValidator(T min): m_min(min){};
 private:
 	T m_min;
 };
