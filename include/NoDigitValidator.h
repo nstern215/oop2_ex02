@@ -5,4 +5,8 @@ class NoDigitValidator : public BaseValidator
 {
 public:
 	
+	NoDigitValidator();
+
+
+
 };

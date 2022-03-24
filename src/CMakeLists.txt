@@ -10,4 +10,5 @@
                                  "Course2YearValidator.cpp"
                                  "Faculty2YearValidator.cpp"
                                  "IdValidator.cpp"
-                                 "NoDigitValidator.cpp")
+                                 "NoDigitValidator.cpp"
+                                 "BaseField.cpp")
