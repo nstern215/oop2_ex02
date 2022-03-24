@@ -35,7 +35,7 @@ T Field<T>::getValue() const
 template<class T>
 void Field<T>::print(std::ostream& os) const
 {
-	os << m_fieldTitle << " = " << m_value << "\n";
+	os << m_fieldTitle << " = " << m_value;
 	/*if (!m_isValid)
 		print error message*/
 }
