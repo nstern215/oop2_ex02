@@ -5,4 +5,5 @@
                                  "RangeValidator.cpp"
                                  "MinValidator.cpp"
                                  "BaseFormValidator.cpp"
+                                 "NoDigitValidator.cpp"
                                  "BaseField.cpp")

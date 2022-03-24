@@ -1,7 +1,7 @@
 #pragma once
 
-class BaseValidator
-{
+class BaseValidator{
 public:
-	
+
+
 };
