@@ -6,7 +6,7 @@
 #include "BaseField.h"
 #include "BaseValidator.h"
 
-template<typename T>
+template<class T>
 class Field : public BaseField
 {
 public:
@@ -15,23 +15,34 @@ public:
 		m_fieldTitle = title;
 	}
 
-	~Field()
-	{}
-
-	void fillField() override
-	{
-		std::cin >> m_value;
-	}
+	void print(std::ostream& os) const override;
 	
-	//std::string getFieldTitle() const override;
+	void fillField() override;
+
+	T getValue() const;
+	
+
 private:
 	T m_value;
 };
 
-template<typename T>
-std::ostream& operator<<(std::ostream& os, const Field<T>& other)
+template<class T>
+T Field<T>::getValue() const
 {
-	os << other.getFieldTitle();
-	return os;
+	return m_value;
 }
 
+template<class T>
+void Field<T>::print(std::ostream& os) const
+{
+	os << m_fieldTitle << " = " << m_value << "\n";
+	/*if (!m_isValid)
+		print error message*/
+}
+
+template<class T>
+void Field<T>::fillField()
+{
+	std::cout << m_fieldTitle << "\n";
+	std::cin >> m_value;
+}
