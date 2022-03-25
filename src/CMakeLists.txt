@@ -6,4 +6,6 @@
                                  "MinValidator.cpp"
                                  "BaseFormValidator.cpp"
                                  "NoDigitValidator.cpp"
+                                 "Courses2YearValidator.cpp"
+                                 "IdValidator.cpp"
                                  "BaseField.cpp")

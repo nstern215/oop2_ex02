@@ -11,6 +11,7 @@ class Field : public BaseField
 public:
 	Field(std::string title);
 	std::string getFieldTitle() const override;
+
 private:
 	std::string m_fieldTitle;
 };

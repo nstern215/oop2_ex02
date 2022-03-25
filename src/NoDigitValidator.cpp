@@ -1,5 +1,9 @@
 #include "NoDigitValidator.h"
 
-NoDigitValidator::NoDigitValidator()
+bool NoDigitValidator::validateName()
 {
+
+	for()
+
+	return false;
 }

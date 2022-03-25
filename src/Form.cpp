@@ -8,6 +8,10 @@ void Form::addField(BaseField* field)
 
 bool Form::validateForm()
 {
+
+
+
+
 	return false;
 }
 

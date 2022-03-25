@@ -80,7 +80,7 @@ const std::string MESSAGE_LINE = '+' + std::string(N_TIMES, '-') + '+' + '\n';
 //------------------- main ----------------------------
 
 int main()
-{
+{  
     // Creating the form fields
     auto nameField        = std::make_unique<Field<std::string>> ("What is your name?");
     // equivalent to:
@@ -97,7 +97,7 @@ int main()
     auto nameValidator    = std::make_unique<NoDigitValidator>            ();
     auto idValidator      = std::make_unique<IDValidator>                 ();
     auto ageValidator     = std::make_unique<RangeValidator<int>>         (currentYear()-MAX_AGE, currentYear()-MIN_AGE);
-    //auto facultyValidator = std::make_unique<RangeValidator<FacultyValue>>(1, 3);
+    auto facultyValidator = std::make_unique<RangeValidator<FacultyValue>>(1, 3);
     auto yearValidator    = std::make_unique<RangeValidator<int>>         (1, MAX_POSSIBLE_YEAR);
     auto courseValidator  = std::make_unique<MinValidator<short>>         (2);
 
@@ -105,15 +105,15 @@ int main()
     nameField       ->addValidator(nameValidator.get());
     idField         ->addValidator(idValidator.get());
     yearOfBirthField->addValidator(ageValidator.get());
-    //facultyField    ->addValidator(facultyValidator.get());
+    facultyField    ->addValidator(facultyValidator.get());
     yearField       ->addValidator(yearValidator.get());
-    courseField     ->addValidator(courseValidator.get());
+    courseField     ->addValidator(courseValidator.get());                                                          
 
     // Creating form validators
-    /*auto facultyToYearValidator
+    auto facultyToYearValidator
         = std::make_unique<Faculty2YearValidator<Field<FacultyValue>, Field<int>>>(facultyField.get(), yearField.get());
     auto coursesToYearValidator
-        = std::make_unique<Courses2YearValidator<Field<short>, Field<int>>>(courseField.get(), yearField.get());*/
+        = std::make_unique<Courses2YearValidator<Field<short>, Field<int>>>(courseField.get(), yearField.get());
 
     // Creating the form and adding the fields to it
     Form myForm;
@@ -125,8 +125,8 @@ int main()
     myForm.addField(courseField.get());
 
     // Adding form validators
-    /*myForm.addValidator(facultyToYearValidator.get());
-    myForm.addValidator(coursesToYearValidator.get());*/
+    myForm.addValidator(facultyToYearValidator.get());
+    myForm.addValidator(coursesToYearValidator.get());
 
     // Getting the information from the user
     clearScreen();

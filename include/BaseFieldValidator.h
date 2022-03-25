@@ -1,9 +1,8 @@
 #pragma once
 
-
-class BaseFormValidator{
+class BaseFieldValidator{
 public:
-
+	
 	virtual bool validate() = 0;
 
 };
