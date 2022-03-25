@@ -93,7 +93,7 @@ int main()
                                                                   + std::to_string(MAX_POSSIBLE_YEAR) + ")");
     auto courseField      = std::make_unique<Field<short>>       ("How many courses you are taking this year?");
 
-    // Creating the field validators
+    //// Creating the field validators
     auto nameValidator    = std::make_unique<NoDigitValidator>            ();
     auto idValidator      = std::make_unique<IDValidator>                 ();
     auto ageValidator     = std::make_unique<RangeValidator<int>>         (currentYear()-MAX_AGE, currentYear()-MIN_AGE);
