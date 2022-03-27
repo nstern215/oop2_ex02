@@ -1,1 +1,100 @@
-# oop2_ex02
+1.
+ex02 "Console application"
+
+2.
+Netanel Stern, ID 206342255
+Daniel Yosef, ID 322017518
+
+3.
+	This program will represent a form that will help a student sign up for
+	his upcoming year of studying. The program will check if the information
+	that was enterd is valid or not until the form is filled out properly.
+
+4.
+	A Form member is created so that it holds a number of different fields
+	and each field has its validators that are added at the start of the 
+	program.
+
+5.
+	HEADER: - BaseFiled: This file holds the diffinition of the
+				   the class of BaseField and of its 
+				   functions and memmbers.
+
+		  - BaseFieldValidator: This file holds the diffinition of the
+				            the class of BaseFieldValidator and its
+						functions.
+
+		  - BaseFormValidator:This file holds the diffinition of the
+				   	    the class of BaseField.
+
+		  - Courses2YearValidator: This file holds the diffinition of the
+				   the template class of Courses2YearValidator and of its 
+				   functions and memmbers.
+
+		  - Faculty2YearValidator: This file holds the diffinition of the
+				   the template class of Faculty2YearValidator and of its 
+				   functions and memmbers.
+
+		  - FacultyValue: This file holds the diffinition of the
+				   the class of FacultyValue and of its 
+				   functions and memmbers.
+
+		  - Field: This file holds the diffinition of the
+				   the class of Field and of its 
+				   functions and memmbers.
+
+		  - Form: This file holds the diffinition of the
+				   the class of Form and of its 
+				   functions and memmbers.
+
+		  - IdValidator: This file holds the diffinition of the
+				   the class of IdValidator and of its 
+				   functions and memmbers.
+
+		  - MinValidator: This file holds the diffinition of the
+				   the template class of MinValidator and of its 
+				   functions and memmbers.
+
+		  - NoDigitValidator: This file holds the diffinition of the
+				   the class of NoDigitValidator and of its 
+				   functions and memmbers.
+
+		  - RangeValidator: This file holds the diffinition of the
+				   the template class of RangeValidator and of its 
+				   functions and memmbers.
+
+
+	CPP:  - BaseFiled: Holds what the functions of the class do.
+
+		  - BaseFieldValidator: Holds what the functions of the class do.
+
+		  - BaseFormValidator: Empty file.
+
+		  - Courses2YearValidator: Empty file.
+
+		  - Faculty2YearValidator: Empty file.
+
+		  - FacultyValue: Holds what the functions of the class do.
+
+		  - Field: Empty file.
+
+		  - Form: Holds what the functions of the class do.
+
+		  - IdValidator: Holds what the functions of the class do.
+
+		  - MinValidator: Empty file.
+
+		  - NoDigitValidator:Holds what the functions of the class do.
+
+		  - RangeValidator: Empty file. 
+
+6.
+	The form member that holds all the needed information is built by 
+	holding different fields that are difined and add to each of the 
+	fields their validators.
+
+
+
+	7. 
+	
+	
