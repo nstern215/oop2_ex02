@@ -12,7 +12,7 @@ void FacultyValue::setValue(int value)
 	m_value = value;
 }
 
-std::string FacultyValue::toString() const
+FacultyValue::operator std::string() const
 {
 	std::string str;
 
@@ -27,16 +27,61 @@ std::string FacultyValue::toString() const
 	case 3:
 		str = "Literature";
 		break;
-		default:
-			str = std::to_string(m_value);
+	default:
+		str = std::to_string(m_value);
 	}
 
 	return str;
 }
 
+int FacultyValue::getValue() const
+{
+	return m_value;
+}
+
+bool FacultyValue::operator==(const FacultyValue& other)
+{
+	return m_value == other.getValue();
+}
+
+bool FacultyValue::operator<(const FacultyValue& other)
+{
+	return m_value < other.getValue();
+}
+
+bool FacultyValue::operator==(const FacultyValue& other) const
+{
+	return m_value == other.getValue();
+}
+
+bool FacultyValue::operator<(const FacultyValue& other) const
+{
+	return m_value < other.getValue();
+}
+
+bool FacultyValue::operator>(const FacultyValue& other) const
+{
+	return m_value > other.getValue();
+}
+
+FacultyValue::operator int() const
+{
+	return m_value;
+}
+
+bool operator<=(const FacultyValue& a, const FacultyValue& b)
+{
+	return a < b || a == b;
+}
+
+bool operator>=(const FacultyValue& a, const FacultyValue& b)
+{
+	return a > b || a == b;
+}
+
 std::ostream& operator<<(std::ostream& os, const FacultyValue& other)
 {
-	os << other.toString();
+	os << std::to_string(other);
 	return os;
 }
 

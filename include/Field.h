@@ -16,11 +16,11 @@ public:
 	}
 
 	void print(std::ostream& os) const override;
-	
+
 	void fillField() override;
 
 	T getValue() const;
-	
+
 
 private:
 	T m_value;
@@ -36,19 +36,22 @@ template<class T>
 void Field<T>::print(std::ostream& os) const
 {
 	os << m_fieldTitle << " = " << m_value;
-	/*if (!m_isValid)
-		print error message*/
+	if (!m_isValid)
+		os << "\t" << m_errMsg;
 }
 
 template<class T>
 void Field<T>::fillField()
 {
-	//todo: delete
 	m_isValid = true;
 
 	std::cout << m_fieldTitle << "\n";
 	std::cin >> m_value;
 
-	for (const auto& validaotr : m_validators)
-		m_isValid = (*validaotr)(&m_value);
+	for (const auto& validator : m_validators)
+	{
+		m_isValid = (*validator)(&m_value);
+		if (!m_isValid)
+			m_errMsg = validator->getErrorMessage();
+	}
 }

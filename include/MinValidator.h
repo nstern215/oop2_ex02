@@ -7,31 +7,24 @@ class MinValidator : public BaseFieldValidator
 public:
 	MinValidator(T min): m_min(min){};
 	
-	bool validate();
-
-	
-
+	bool validate(void* value) override;	
+	std::string getErrorMessage() override;
 private:
-	T m_data;
 	T m_min;
+
+	std::string m_errMsg = "Out of range";
 };
 
+template <class T>
+bool MinValidator<T>::validate(void* value) {
+
+	T tValue = *(static_cast<T*>(value));
+	
+	return m_min <= tValue;
+}
 
 template <class T>
-bool MinValidator<T>::validate() {
-
-	if (m_data >= m_min)
-		return true;
-	else
-		return false;
+std::string MinValidator<T>::getErrorMessage()
+{
+	return m_errMsg;
 }
-//
-//template <class T>
-//bool MinValidator<T>::operator>(const MinValidator<T>& other) {
-//	return (m_data > other.m_data);
-//}
-//
-//template <>
-//bool MinValidator<char*>::operator>(const MinValidator<char*>& other) {
-//	return (strcmp(m_data, other.m_data) > 0);
-//}

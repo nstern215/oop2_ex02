@@ -7,15 +7,17 @@ void Form::addField(BaseField* field)
 
 bool Form::validateForm() const
 {
-	/*for (const auto& field : m_fields)
-		field->validate()*/
-
-
+	bool isValid = true;
+	
 	for (const auto& field : m_fields)
 		if (!field->isValid())
-			return false;
+			isValid = false;
 
-	return true;
+	for (const auto& validator : m_validators)
+		if (!validator->validate())
+			isValid = false;
+	
+	return isValid;
 }
 
 void Form::addValidator(BaseFormValidator* validator)
@@ -39,6 +41,10 @@ std::ostream& Form::print(std::ostream& os) const
 		os << *field << "\n";
 		os << std::string(60, '-') << "\n";
 	}
+
+	for (const auto& validator : m_validators)
+		if (!validator->validate())
+			os << validator->getErrMsg() << "\n";
 
 	return os;
 }

@@ -1,4 +1,5 @@
 #pragma once
+#include <string>
 
 class BaseFieldValidator{
 public:
@@ -7,6 +8,5 @@ public:
 
 	virtual bool operator()(void* value);
 
-	//todo: error message
-	//virtual std::string getErrorMessage() = 0;
+	virtual std::string getErrorMessage() = 0;
 };

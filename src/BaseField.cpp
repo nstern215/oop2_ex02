@@ -9,6 +9,16 @@ void BaseField::addValidator(BaseFieldValidator* validator)
 	m_validators.push_back(validator);
 }
 
+void BaseField::setIsValid(bool isValid)
+{
+	m_isValid = isValid;
+}
+
+void BaseField::setErrMsg(std::string errMsg)
+{
+	m_errMsg = errMsg;
+}
+
 std::string BaseField::getFieldTitle() const
 {
 	return m_fieldTitle;
