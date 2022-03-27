@@ -3,7 +3,7 @@
 #include <vector>
 
 
-#include "BaseValidator.h"
+#include "BaseFieldValidator.h"
 
 class BaseField
 {
@@ -11,14 +11,16 @@ public:
 	BaseField();
 	virtual ~BaseField() = default;
 	std::string getFieldTitle() const;
-	void addValidator(BaseValidator* validator);
+	void addValidator(BaseFieldValidator* validator);
 
 	bool isValid() const;
 	
 	virtual void fillField() = 0;
 	virtual void print(std::ostream& os) const = 0;
+
 protected:
-	std::vector<BaseValidator*> m_validators;
+
+	std::vector<BaseFieldValidator*> m_validators;
 	std::string m_fieldTitle;
 	bool m_isValid;
 };

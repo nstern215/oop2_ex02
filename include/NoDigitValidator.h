@@ -1,15 +1,13 @@
 #pragma once
-#include "BaseValidator.h"
+#include "BaseFieldValidator.h"
 
 #include <string>
 
-class NoDigitValidator : public BaseValidator
+class NoDigitValidator : public BaseFieldValidator
 {
 public:
-	
-	NoDigitValidator(std::string name) : m_name(name){}
 
-	bool validateName();
+	bool validate(void* value) override;
 
 private:
 

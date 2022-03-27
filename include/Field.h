@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "BaseField.h"
-#include "BaseValidator.h"
+#include "BaseFieldValidator.h"
 
 template<class T>
 class Field : public BaseField
@@ -43,6 +43,12 @@ void Field<T>::print(std::ostream& os) const
 template<class T>
 void Field<T>::fillField()
 {
+	//todo: delete
+	m_isValid = true;
+
 	std::cout << m_fieldTitle << "\n";
 	std::cin >> m_value;
+
+	for (const auto& validaotr : m_validators)
+		m_isValid = (*validaotr)(&m_value);
 }

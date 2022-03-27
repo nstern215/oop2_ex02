@@ -4,7 +4,7 @@ BaseField::BaseField() :
 	m_isValid(false)
 {}
 
-void BaseField::addValidator(BaseValidator* validator)
+void BaseField::addValidator(BaseFieldValidator* validator)
 {
 	m_validators.push_back(validator);
 }

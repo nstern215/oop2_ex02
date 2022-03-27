@@ -94,26 +94,26 @@ int main()
     auto courseField      = std::make_unique<Field<short>>       ("How many courses you are taking this year?");
 
     //// Creating the field validators
-    auto nameValidator    = std::make_unique<NoDigitValidator>            ();
-    auto idValidator      = std::make_unique<IDValidator>                 ();
-    auto ageValidator     = std::make_unique<RangeValidator<int>>         (currentYear()-MAX_AGE, currentYear()-MIN_AGE);
-    auto facultyValidator = std::make_unique<RangeValidator<FacultyValue>>(1, 3);
+    //auto nameValidator    = std::make_unique<NoDigitValidator>            ();
+    //auto idValidator      = std::make_unique<IDValidator>                 ();
+    //auto ageValidator     = std::make_unique<RangeValidator<int>>         (currentYear()-MAX_AGE, currentYear()-MIN_AGE);
+    //auto facultyValidator = std::make_unique<RangeValidator<FacultyValue>>(1, 3);
     auto yearValidator    = std::make_unique<RangeValidator<int>>         (1, MAX_POSSIBLE_YEAR);
-    auto courseValidator  = std::make_unique<MinValidator<short>>         (2);
+    //auto courseValidator  = std::make_unique<MinValidator<short>>         (2);
 
     // Adding the validators to the fields
-    nameField       ->addValidator(nameValidator.get());
-    idField         ->addValidator(idValidator.get());
-    yearOfBirthField->addValidator(ageValidator.get());
-    facultyField    ->addValidator(facultyValidator.get());
+    //nameField       ->addValidator(nameValidator.get());
+    //idField         ->addValidator(idValidator.get());
+    //yearOfBirthField->addValidator(ageValidator.get());
+    //facultyField    ->addValidator(facultyValidator.get());
     yearField       ->addValidator(yearValidator.get());
-    courseField     ->addValidator(courseValidator.get());                                                          
+    //courseField     ->addValidator(courseValidator.get());                                                          
 
     // Creating form validators
-    auto facultyToYearValidator
+    /*auto facultyToYearValidator
         = std::make_unique<Faculty2YearValidator<Field<FacultyValue>, Field<int>>>(facultyField.get(), yearField.get());
     auto coursesToYearValidator
-        = std::make_unique<Courses2YearValidator<Field<short>, Field<int>>>(courseField.get(), yearField.get());
+        = std::make_unique<Courses2YearValidator<Field<short>, Field<int>>>(courseField.get(), yearField.get());*/
 
     // Creating the form and adding the fields to it
     Form myForm;
@@ -125,8 +125,8 @@ int main()
     myForm.addField(courseField.get());
 
     // Adding form validators
-    myForm.addValidator(facultyToYearValidator.get());
-    myForm.addValidator(coursesToYearValidator.get());
+   /* myForm.addValidator(facultyToYearValidator.get());
+    myForm.addValidator(coursesToYearValidator.get());*/
 
     // Getting the information from the user
     clearScreen();

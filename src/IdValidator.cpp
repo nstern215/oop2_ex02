@@ -1,39 +1,34 @@
 #include "IdValidator.h"
 
 
-bool IDValidator::validate()
+bool IDValidator::validate(void* value)
 {
-	int left = 1, 
-		right = 100000000,
-		IDSum = 0;
+	unsigned int IDvalue = *(static_cast<int*>(value));
 
-	for (int i = 0; i < 8; i++) {
-		
-		int num = 0;
+	int IDsum = 0;
 
-		num += (m_ID / right) % left;
 
-		if (i % 2 == 0)
+	for (int i = 9, j = 10 ; i > 0; i-- , j*= 10) {
+
+		int num = IDvalue % j;
+
+		if (i % 2 == 0) {
+
 			num *= 2;
-		
-		if (num > 9) {
-			int newNum = num / 10 + num % 10;
-			num = newNum;
+
+			if (num > 9) {
+
+				num = (num % 10) + (num / 10);
+			}
 		}
 
-		IDSum += num;
+		IDsum += num;
 
-		right = right / 10;
-		left = left * 10; 
+		IDvalue = IDvalue % j;
 	}
 
-	if ((IDSum + m_ID / right) % 2 == 0)
+	if ((IDsum) % 2 == 0)
 		return true;
 	else
 		return false;
-}
-
-unsigned int IDValidator::getID()
-{
-	return m_ID;
 }

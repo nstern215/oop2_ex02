@@ -10,6 +10,11 @@ bool Form::validateForm() const
 	/*for (const auto& field : m_fields)
 		field->validate()*/
 
+
+	for (const auto& field : m_fields)
+		if (!field->isValid())
+			return false;
+
 	return true;
 }
 
